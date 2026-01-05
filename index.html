@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,36 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-        
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         /* Smooth transitions for dynamic header color */
-        #result-banner { transition: background-color 0.5s ease; }
+        #result-banner {
+            transition: background-color 0.5s ease;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen pb-12 text-gray-900">
     <div class="max-w-4xl mx-auto px-4 pt-8">
         <!-- Header -->
         <header class="text-center mb-8">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">Networks Grade Calculator</h1>
-            <p class="text-gray-500 uppercase tracking-widest text-xs font-semibold">ECON 2040 • INFO 2040 • SOC 2090 • CS 2850</p>
+            <p class="text-gray-500 uppercase tracking-widest text-xs font-semibold">ECON 2040 • INFO 2040 • SOC 2090 •
+                CS 2850</p>
         </header>
 
         <!-- Main Calculator Card -->
         <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-            
+
             <!-- Dynamic Result Banner -->
             <div id="result-banner" class="bg-gray-800 text-white p-8 md:p-12 text-center">
                 <div class="text-sm uppercase tracking-widest opacity-80 mb-2 font-bold">Projected Current Average</div>
@@ -33,8 +45,9 @@
                 <div class="text-2xl font-medium opacity-90">
                     <span id="final-numeric">0.00</span>%
                 </div>
-                
-                <div class="mt-8 pt-6 border-t border-white/20 grid grid-cols-2 gap-8 text-xs font-bold uppercase tracking-tight opacity-90">
+
+                <div
+                    class="mt-8 pt-6 border-t border-white/20 grid grid-cols-2 gap-8 text-xs font-bold uppercase tracking-tight opacity-90">
                     <div>
                         <span class="block opacity-60 mb-1">Points Earned</span>
                         <span class="text-xl"><span id="points-earned">0.00</span> / 100</span>
@@ -47,12 +60,13 @@
             </div>
 
             <div class="p-6 md:p-10 space-y-12">
-                
+
                 <!-- Short Homeworks -->
                 <section>
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-extrabold text-gray-800">Short Homeworks (40%)</h2>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-bold" id="short-hw-sum">Sum: 0 / 40 (Cap)</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-bold"
+                            id="short-hw-sum">Sum: 0 / 40 (Cap)</span>
                     </div>
                     <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3">
                         <div id="short-hw-inputs" class="contents"></div>
@@ -67,12 +81,35 @@
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
                             <label class="block text-xs font-bold text-gray-500 uppercase mb-2">HW 4 (Out of 50)</label>
-                            <input type="number" id="hw4" placeholder="Pending" min="0" max="50" step="0.5" class="save-state w-full bg-white px-4 py-3 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:outline-none transition-all text-lg font-bold">
+                            <input type="number" id="hw4" placeholder="Pending" min="0" max="50" step="0.5"
+                                class="save-state w-full bg-white px-4 py-3 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:outline-none transition-all text-lg font-bold">
                         </div>
                         <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
                             <label class="block text-xs font-bold text-gray-500 uppercase mb-2">HW 9 (Out of 35)</label>
-                            <input type="number" id="hw9" placeholder="Pending" min="0" max="35" step="0.5" class="save-state w-full bg-white px-4 py-3 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:outline-none transition-all text-lg font-bold">
+                            <input type="number" id="hw9" placeholder="Pending" min="0" max="35" step="0.5"
+                                class="save-state w-full bg-white px-4 py-3 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:outline-none transition-all text-lg font-bold">
                         </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-100">
+
+                <!-- Vertical Attendance & Participation -->
+                <section>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+                        <h2 class="text-xl font-extrabold text-gray-800">Class Engagement (20%)</h2>
+                        <div class="text-[10px] font-bold uppercase text-gray-400">1 point each per class (12 total)
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 max-w-xl mx-auto md:mx-0">
+                        <div
+                            class="grid grid-cols-12 gap-4 px-4 py-2 text-[10px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-100">
+                            <div class="col-span-6">Session</div>
+                            <div class="col-span-3 text-center">Attend (A)</div>
+                            <div class="col-span-3 text-center">Partic (P)</div>
+                        </div>
+                        <div id="engagement-inputs" class="space-y-1"></div>
                     </div>
                 </section>
 
@@ -85,13 +122,16 @@
                             <h2 class="text-2xl font-black text-blue-900 mb-2">Final Exam (20%)</h2>
                             <p class="text-blue-700/70 text-sm mb-6">Enter your actual or estimated score below.</p>
                             <div class="max-w-xs">
-                                <label class="block text-xs font-bold text-blue-700 uppercase mb-2 tracking-widest">Exam Score (0-50)</label>
-                                <input type="number" id="exam" placeholder="Not Taken" min="0" max="50" step="0.5" class="save-state w-full px-4 py-4 border-2 border-blue-200 rounded-2xl focus:ring-4 focus:ring-blue-200 focus:outline-none transition-all text-3xl font-black text-blue-900 shadow-sm">
+                                <label class="block text-xs font-bold text-blue-700 uppercase mb-2 tracking-widest">Exam
+                                    Score (0-50)</label>
+                                <input type="number" id="exam" placeholder="Not Taken" min="0" max="50" step="0.5"
+                                    class="save-state w-full px-4 py-4 border-2 border-blue-200 rounded-2xl focus:ring-4 focus:ring-blue-200 focus:outline-none transition-all text-3xl font-black text-blue-900 shadow-sm">
                             </div>
                         </div>
-                        
+
                         <div class="bg-white p-6 rounded-2xl border border-blue-100 shadow-sm">
-                            <h3 class="text-blue-900 font-bold text-sm uppercase tracking-widest mb-4">Exam Scores Needed for Target Grade:</h3>
+                            <h3 class="text-blue-900 font-bold text-sm uppercase tracking-widest mb-4">Exam Scores
+                                Needed for Target Grade:</h3>
                             <div id="target-scores" class="space-y-2 text-sm">
                                 <!-- Populated by JS -->
                                 <div class="text-gray-400 italic">Enter your other grades to see targets...</div>
@@ -102,34 +142,19 @@
 
                 <hr class="border-gray-100">
 
-                <!-- Vertical Attendance & Participation -->
-                <section>
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
-                        <h2 class="text-xl font-extrabold text-gray-800">Class Engagement (20%)</h2>
-                        <div class="text-[10px] font-bold uppercase text-gray-400">1 point each per class (12 total)</div>
-                    </div>
-                    
-                    <div class="space-y-2 max-w-xl mx-auto md:mx-0">
-                        <div class="grid grid-cols-12 gap-4 px-4 py-2 text-[10px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-100">
-                            <div class="col-span-6">Session</div>
-                            <div class="col-span-3 text-center">Attend (A)</div>
-                            <div class="col-span-3 text-center">Partic (P)</div>
-                        </div>
-                        <div id="engagement-inputs" class="space-y-1"></div>
-                    </div>
-                </section>
-
-                <hr class="border-gray-100">
-
                 <!-- Extra Credit -->
-                <section class="flex items-center justify-between bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
+                <section
+                    class="flex items-center justify-between bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
                     <div>
                         <h3 class="font-bold text-emerald-900">Course Evaluation</h3>
-                        <p class="text-xs text-emerald-700 font-medium">Earn +1% flat extra credit for completing the evaluation</p>
+                        <p class="text-xs text-emerald-700 font-medium">Earn +1% flat extra credit for completing the
+                            evaluation</p>
                     </div>
                     <label class="relative inline-flex items-center cursor-pointer scale-125">
                         <input type="checkbox" id="extra-credit" class="save-state sr-only peer">
-                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
+                        <div
+                            class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600">
+                        </div>
                     </label>
                 </section>
             </div>
@@ -138,18 +163,20 @@
         <!-- Legend and Tools -->
         <div class="mt-8 text-center space-y-6">
             <div class="text-gray-400 text-[10px] font-bold uppercase tracking-widest space-y-2">
-                <div>Rounding Rule: Nearest Integer (92.50 rounds to 93) • Caps: 40/54 points for Short HW full credit</div>
+                <div>Rounding Rule: Nearest Integer (92.50 rounds to 93) • Caps: 40/54 points for Short HW full credit
+                </div>
                 <div class="text-gray-300">Created for Networks ECON/INFO/CS Winter 2026</div>
             </div>
-            
-            <button onclick="resetCalculator()" class="text-xs font-bold text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest border-b border-transparent hover:border-red-200">
+
+            <button onclick="resetCalculator()"
+                class="text-xs font-bold text-gray-400 hover:text-red-500 transition-colors uppercase tracking-widest border-b border-transparent hover:border-red-200">
                 Clear all data and reset
             </button>
         </div>
     </div>
 
     <script>
-        const shortHwList = [1, 2, 3, 5, 6, 7, 8, 10, 11]; 
+        const shortHwList = [1, 2, 3, 5, 6, 7, 8, 10, 11];
         const shortHwContainer = document.getElementById('short-hw-inputs');
         const engagementContainer = document.getElementById('engagement-inputs');
 
@@ -237,10 +264,10 @@
                     shortCount++;
                 }
             });
-            
+
             const shortActual = Math.min(40, shortSum);
             totalActualPoints += shortActual;
-            
+
             if (shortCount > 0) {
                 const categoryWeight = 40;
                 const pointsPossibleSoFar = shortCount * 6;
@@ -270,7 +297,7 @@
             // 2. Engagement (10% + 10%)
             const attBoxes = document.querySelectorAll('.att-box');
             const partBoxes = document.querySelectorAll('.part-box');
-            
+
             let attCount = 0;
             let partCount = 0;
             let highestClassCompleted = 0;
@@ -288,7 +315,7 @@
             totalActualPoints += (attContrib + partContrib);
 
             if (highestClassCompleted > 0) {
-                const engagementWeightSoFar = (highestClassCompleted / 12) * 20; 
+                const engagementWeightSoFar = (highestClassCompleted / 12) * 20;
                 totalProjectedContribution += (attContrib + partContrib);
                 totalWeightAttempted += engagementWeightSoFar;
             }
@@ -304,7 +331,7 @@
                 finalNumeric = (totalProjectedContribution / totalWeightAttempted) * 100;
                 finalNumeric = Math.min(101, finalNumeric);
             }
-            
+
             const rounded = Math.round(finalNumeric);
             const letter = getLetter(rounded);
 
@@ -315,7 +342,7 @@
 
             updateHeaderColor(letter);
             updateTargetScores(totalActualPoints, document.getElementById('exam').value !== "");
-            
+
             // Auto-save on every calculation
             saveToLocalStorage();
         }
@@ -327,23 +354,23 @@
 
             const targets = [
                 { name: 'A+', score: 97.5 },
-                { name: 'A',  score: 92.5 },
+                { name: 'A', score: 92.5 },
                 { name: 'A-', score: 89.5 },
                 { name: 'B+', score: 87.5 },
-                { name: 'B',  score: 82.5 },
+                { name: 'B', score: 82.5 },
                 { name: 'B-', score: 79.5 },
                 { name: 'C+', score: 77.5 },
-                { name: 'C',  score: 72.5 },
+                { name: 'C', score: 72.5 },
                 { name: 'C-', score: 69.5 }
             ];
 
             container.innerHTML = '';
-            
+
             targets.forEach(t => {
                 const neededPoints = (t.score - basePoints) * 2.5;
                 const row = document.createElement('div');
                 row.className = "flex justify-between items-center py-1 border-b border-blue-50 last:border-0";
-                
+
                 let textResult = '';
                 let colorClass = 'text-gray-600';
 
@@ -383,7 +410,7 @@
         function updateHeaderColor(letter) {
             const banner = document.getElementById('result-banner');
             banner.classList.remove('bg-gray-800', 'bg-emerald-600', 'bg-lime-500', 'bg-yellow-500', 'bg-orange-500', 'bg-red-600', 'bg-sky-600');
-            
+
             if (letter.startsWith('A')) banner.classList.add('bg-emerald-600');
             else if (letter.startsWith('B')) banner.classList.add('bg-lime-500');
             else if (letter.startsWith('C')) banner.classList.add('bg-yellow-500');
@@ -394,7 +421,7 @@
 
         // Initialize
         loadFromLocalStorage();
-        
+
         // Listeners
         document.querySelectorAll('input').forEach(i => {
             const eventType = i.type === 'checkbox' ? 'change' : 'input';
@@ -404,4 +431,5 @@
         calculate(); // Initial run
     </script>
 </body>
+
 </html>
